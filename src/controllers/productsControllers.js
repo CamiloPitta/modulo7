@@ -2,7 +2,8 @@
 
 const products = {
     productsLanding : (req, res) => {
-        res.send('productos por controller')
+        // res.send('productos por controller')
+        res.render('products')
     },
     productsId: (req, res) => {
         res.send('producto ' + req.params.id + ' por controllers')

@@ -1,6 +1,6 @@
 const main = {
     mainLanding: (req, res) => {
-        res.send('home por controllers')
+        res.render('home')
     },
     mainNosotros: (req, res) => {
         res.send('nosotros por controllers')

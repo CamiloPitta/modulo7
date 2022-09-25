@@ -2,12 +2,22 @@
 
 const express = require('express')
 
+const app = express()
+
+// EJS
+
+app.set('view engine', 'ejs')
+app.set('views', '../views')
+
+// Carpeta public de rescursos estáticos
+
+app.use(express.static('./public'))
+
+// Rutas
+
 const productos = require('./routes/products.js')
 const main = require('./routes/main.js')
 const collections = require('./routes/collections.js')
-
-const app = express()
-
 
 
 // Levantamiento del servidor

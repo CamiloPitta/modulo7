@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-const main = require('../controllers/mainControllers.js.js')
+const main = require('../controllers/mainControllers.js')
 
 router.get('/', main.mainLanding)
 
