@@ -1,5 +1,6 @@
 const main = {
     mainLanding: (req, res) => {
+        // res.render('home')
         res.render('home')
     },
     mainNosotros: (req, res) => {
