@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+<body>
+    <h1> Editar producto <%= productos.id%> </h1>
+
+    <form action = 'edit/:id?_method=PUT' method = 'POST'>
+        <label for = 'id'> Id del producto</label>
+        <input type = 'text' name = 'id' placeholder= 'Id del producto' >
+
+        <label for = 'name'> Nombre del producto</label>
+        <input type = 'text' name = 'name' placeholder= 'Nombre del producto' >
+
+        <label for = 'price'> Precio del producto</label>
+        <input type = 'text' name = 'price' placeholder= 'Precio del producto' >
+
+        <label for = 'quantity'> Cantidad del producto</label>
+        <input type = 'text' name = 'quantity' placeholder= 'Cantidad del producto' >
+
+
+        <input type = 'submit'>
+
+    </form>
+
+</body>
+</html>

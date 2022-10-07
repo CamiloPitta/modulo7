@@ -24,7 +24,7 @@ app.use(express.json())
 // Para que funcione PUT y DELETE
 // Hay que instalar method-override --> npm install method-override --save
 const methodOverride = require('method-override')
-app.use(methodOverride('_method'))
+app.use(methodOverride("_method"))
 
 // Rutas
 

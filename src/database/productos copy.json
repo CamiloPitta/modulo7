@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "nombre": "Primer producto",
+        "precio": 10,
+        "cantidad": 100,
+        "imagen": "one.jpg"
+        
+    }, 
+    {
+        "id": 2,
+        "nombre": "Segundo producto",
+        "precio": 20,
+        "cantidad": 200,
+        "imagen": "two.jpg"
+        
+    },
+    {
+        "id": 3,
+        "nombre": "Tercer producto",
+        "precio": 30,
+        "cantidad": 300,
+        "imagen": "three.png"
+        
+    },
+    {
+        "id": 4,
+        "nombre": "Cuarto producto",
+        "precio": 40,
+        "cantidad": 400,
+        "imagen": "four.jpg"
+        
+    },
+    {
+        "id": 5,
+        "nombre": "Quinto producto",
+        "precio": 50,
+        "cantidad": 500,
+        "imagen": "fivr.jpeg"
+    
+    }
+]

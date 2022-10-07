@@ -1,19 +1,17 @@
 [
     {
-        "id": 1,
-        "nombre": "Primer producto",
-        "precio": 10,
-        "cantidad": 100,
+        "id": "1",
+        "nombre": "edit1",
+        "precio": "edit1",
+        "cantidad": "edit1",
         "imagen": "one.jpg"
-        
-    }, 
+    },
     {
         "id": 2,
         "nombre": "Segundo producto",
         "precio": 20,
         "cantidad": 200,
         "imagen": "two.jpg"
-        
     },
     {
         "id": 3,
@@ -21,7 +19,6 @@
         "precio": 30,
         "cantidad": 300,
         "imagen": "three.png"
-        
     },
     {
         "id": 4,
@@ -29,7 +26,6 @@
         "precio": 40,
         "cantidad": 400,
         "imagen": "four.jpg"
-        
     },
     {
         "id": 5,
@@ -37,6 +33,59 @@
         "precio": 50,
         "cantidad": 500,
         "imagen": "fivr.jpeg"
-    
+    },
+    {
+        "id": "a",
+        "name": "a",
+        "price": "a",
+        "quantity": "a"
+    },
+    {
+        "id": "6",
+        "name": "Producto 6",
+        "price": "60",
+        "quantity": "600"
+    },
+    {
+        "id": "6",
+        "name": "Producto 6",
+        "price": "60",
+        "quantity": "600"
+    },
+    {
+        "id": "7",
+        "name": "Producto 7",
+        "price": "70",
+        "quantity": "700"
+    },
+    {
+        "id": "8",
+        "name": "Producto 8",
+        "price": "80",
+        "quantity": "800"
+    },
+    {
+        "id": "9",
+        "name": "Producto 9",
+        "price": "90",
+        "quantity": "900"
+    },
+    {
+        "id": "holi",
+        "name": "como ",
+        "price": "estas",
+        "quantity": "chao"
+    },
+    {
+        "id": "j",
+        "name": "j",
+        "price": "j",
+        "quantity": "j"
+    },
+    {
+        "id": "l",
+        "name": "l",
+        "price": "l",
+        "quantity": "l"
     }
 ]

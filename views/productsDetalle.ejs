@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products detalle</title>
+</head>
+<body>
+
+    <% for (let i = 0; i < productos.length; i++){ %>
+        <% console.log(i)%>
+        <h1> Id <%= productos[i].id%></h1>
+        <h3> Nombre <%= productos[i].nombre%></h3>
+        <h3> Precio <%= productos[i].precio%></h3>
+        <h3> Cantidad <%= productos[i].cantidad%></h3>
+        <img src = '/images/<%=productos[i].imagen%>'>
+        <!-- <button onclick = '/rutaprueba'> Delete </button> -->
+
+    <% } %>
+       
+
+</body>
+</html>
