@@ -9,13 +9,16 @@
 <body>
 
     <% for (let i = 0; i < productos.length; i++){ %>
-        <% console.log(i)%>
+
         <h1> Id <%= productos[i].id%></h1>
         <h3> Nombre <%= productos[i].nombre%></h3>
         <h3> Precio <%= productos[i].precio%></h3>
         <h3> Cantidad <%= productos[i].cantidad%></h3>
         <img src = '/images/<%=productos[i].imagen%>'>
-        <!-- <button onclick = '/rutaprueba'> Delete </button> -->
+        <form method = 'POST' action = '/products/delete/<%= productos[i].id%>?_method=DELETE'>
+            <button type = 'submit'> Delete product <%= productos[i].id%></button>
+        </form>
+        
 
     <% } %>
        

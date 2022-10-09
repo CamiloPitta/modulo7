@@ -9,9 +9,9 @@
 <body>
     <h1> Editar producto <%= productos.id%> </h1>
 
-    <form action = 'edit/:id?_method=PUT' method = 'POST'>
-        <label for = 'id'> Id del producto</label>
-        <input type = 'text' name = 'id' placeholder= 'Id del producto' >
+    <form action = '/products/edit/<%= productos.id%>?_method=PUT' method = 'POST'>
+        <!-- <label for = 'id'> Id del producto</label>
+        <input type = 'text' name = 'id' placeholder= 'Id del producto' > -->
 
         <label for = 'name'> Nombre del producto</label>
         <input type = 'text' name = 'name' placeholder= 'Nombre del producto' >

@@ -1,8 +1,35 @@
 // Importación módulos
 
-const express = require('express')
+// Path
 
+const path = require('path')
+
+// Express
+
+const express = require('express')
 const router = express.Router()
+
+// Multer
+
+  // Requerir módulo
+const multer = require('multer')
+
+//   Configurar filename y destination
+const storage = multer.diskStorage({
+    destination: (req, file, callback) => {
+        callback(null, path.join(__dirname, '../../public/images'))
+    },
+    filename: ((req, file, callback) => {
+        console.log(file)
+        newFileName = Date.now() + path.extname(file.originalname)
+        callback(null, newFileName)
+    })
+})
+
+const upload = multer({storage})
+
+
+// Controlador productos
 
 const products = require('../controllers/productsControllers')
 
@@ -12,11 +39,11 @@ router.get('/', products.productsLanding)
 // router.get('/:id/:precio/resena?', products.productsResena)
 router.get('/detalle', products.productsDetalle)
 router.get('/create', products.productsVistaCreate)
-router.post('/create', products.productsCreate)
+router.post('/create', upload.single('imagenUsuario'), products.productsCreate)
 router.get('/detallesingle/:id', products.productsDetallesingle)
 router.get('/edit/:id', products.productsVistaEdit)
 router.put('/edit/:id', products.pr)
-// router.put('/delete/:id', products.productsDelete)
+router.delete('/delete/:id', products.productsDelete)
 
 
 module.exports = router

@@ -9,18 +9,21 @@
 <body>
     <h1> Formulario creación de productos </h1>
 
-    <form action = 'create' method = 'POST'>
+    <form action = 'create' method = 'POST' enctype = 'multipart/form-data'>
         <label for = 'id'> Id del producto</label>
         <input type = 'text' name = 'id' placeholder= 'Id del producto' >
 
-        <label for = 'name'> Nombre del producto</label>
-        <input type = 'text' name = 'name' placeholder= 'Nombre del producto' >
+        <label for = 'nombre'> Nombre del producto</label>
+        <input type = 'text' name = 'nombre' placeholder= 'Nombre del producto' >
 
-        <label for = 'price'> Precio del producto</label>
-        <input type = 'text' name = 'price' placeholder= 'Precio del producto' >
+        <label for = 'precio'> Precio del producto</label>
+        <input type = 'text' name = 'precio' placeholder= 'Precio del producto' >
 
-        <label for = 'quantity'> Cantidad del producto</label>
-        <input type = 'text' name = 'quantity' placeholder= 'Cantidad del producto' >
+        <label for = 'cantidad'> Cantidad del producto</label>
+        <input type = 'text' name = 'cantidad' placeholder= 'Cantidad del producto' >
+
+        <label> Imagen del producto </label>
+        <input type = 'file' name = 'imagenUsuario'>
 
 
         <input type = 'submit'>
