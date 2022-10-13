@@ -33,6 +33,7 @@ const main = require('./routes/mainRoutes.js')
 const collections = require('./routes/collectionsRoutes.js')
 
 
+
 // Levantamiento del servidor
 
 app.listen(3001, () => {

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+<body>
+    <h1> Formulario registro de usuarios </h1>
+
+    <form action = '/registro' method = 'POST' enctype = 'multipart/form-data'>
+
+        <label for = 'nombre'> Nombre</label>
+        <input type = 'text' name = 'nombre' placeholder= 'Nombre' value = '<%= locals.oldData ? oldData.nombre : null %>'>
+        <% if (locals.errores && errores.nombre) { %>
+            <%= errores.nombre.msg %>
+        <% } %>
+        
+
+        <label for = 'email'> Correo electrónico</label>
+        <input type = 'text' name = 'email' placeholder= 'E-mail' value = '<%= locals.oldData ? oldData.email : null %>'>
+        <% if (locals.errores && errores.email) { %>
+            <%= errores.email.msg %>
+        <% } %>
+
+        <label for = 'contrasena'> Contraseña</label>
+        <input type = 'text' name = 'contrasena' placeholder= 'Contraseña' value = '<%= locals.oldData ? oldData.contrasena : null %>'>
+        <% if (locals.errores && errores.contrasena) { %>
+            <%= errores.contrasena.msg %>
+        <% } %> 
+
+        <label> Imagen del usuario</label>
+        <input type = 'file' name = 'imagenUsuario'>
+        <% if (locals.errores && errores.imagenUsuario) { %>
+            <%= errores.imagenUsuario.msg %>
+        <% } %> 
+
+
+    
+        <input type = 'submit'>
+
+    </form>
+
+</body>
+</html>
+

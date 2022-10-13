@@ -1,34 +1,30 @@
 [
     {
-        "id": "5",
-        "nombre": "5",
-        "precio": "5",
-        "cantidad": "5"
-    },
-    {
         "id": "l",
         "nombre": "l",
         "precio": "l",
-        "cantidad": "l"
+        "cantidad": "l",
+        "imagen": "1665669958403.jpg"
     },
     {
-        "id": "u",
-        "nombre": "u",
-        "precio": "u",
-        "cantidad": "u"
+        "id": "n",
+        "nombre": "n",
+        "precio": "n",
+        "cantidad": "n",
+        "imagen": "1665669974809.jpg"
     },
     {
-        "id": "multer",
-        "nombre": "multer",
-        "precio": "multer",
-        "cantidad": "multer",
-        "imagen": "1665264867765.jpg"
+        "id": "n",
+        "nombre": "n",
+        "precio": "n",
+        "cantidad": "n",
+        "imagen": "1665674529764.png"
     },
     {
-        "id": "prueba",
-        "nombre": "prueba",
-        "precio": "v",
-        "cantidad": "prueba",
-        "imagen": "1665348958070.jpg"
+        "id": "n",
+        "nombre": "n",
+        "precio": "n",
+        "cantidad": "n",
+        "imagen": "1665674529788.png"
     }
 ]
