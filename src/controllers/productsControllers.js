@@ -2,6 +2,8 @@ const fs = require('fs')
 const path = require('path')
 const productos = JSON.parse(fs.readFileSync(path.join(__dirname, '../database/productos.json'))) 
 
+//
+
 const products = {
     productsLanding : (req, res) => {
         // res.send('productos por controller')
@@ -37,6 +39,7 @@ const products = {
             productos.push(datosProducto)
             // Sobreescritura del json
             fs.writeFileSync(path.join(__dirname, '../database/productos.json'), JSON.stringify(productos, null, 4))
+
        }
        else{
            res.render('productsVistaCreate')

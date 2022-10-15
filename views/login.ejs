@@ -9,13 +9,22 @@
 <body>
     <h1> Formulario login de usuarios </h1>
 
-    <form action = 'create' method = 'POST' enctype = 'multipart/form-data'>
+    <form action = 'login' method = 'POST' >
 
         <label for = 'email'> Correo electrónico</label>
-        <input type = 'text' name = 'email' placeholder= 'E-mail' >
+        <input type = 'text' name = 'email' placeholder= 'E-mail' value = '<%= locals.oldData ? oldData.email : null %>'>
+        <% if (locals.errores && errores.email) { %>
+            <%= errores.email.msg %>
+        <% } %>
 
         <label for = 'contrasena'> Contraseña</label>
         <input type = 'text' name = 'contrasena' placeholder= 'Contraseña' >
+        <% if (locals.errores && errores.contrasena) { %>
+            <%= errores.contrasena.msg %>
+        <% } %>
+
+        <label for = 'recordar'> Recordarme </label>    
+        <input type= "checkbox" name = 'recordar'>
 
         <input type = 'submit'>
 

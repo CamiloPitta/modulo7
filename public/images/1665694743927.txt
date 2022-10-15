@@ -1,5 +1,0 @@
-Hello Team, I hope all is well with you.
-#Escalation
-Issue/Request: The merchant is requesting a custom export format. Please see attached file.
-Store URL:
-Additional information (if any): 

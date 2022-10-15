@@ -7,47 +7,22 @@ const main = require('../controllers/mainControllers.js')
 // Requerir Multer
 const multer = require('multer')
 
-//   Configurar Multer
-const storage = multer.diskStorage({
-    destination: (req, file, callback) => {
-        callback(null, path.join(__dirname, '../../public/images'))
-    },
-    filename: ((req, file, callback) => {
-        console.log(file)
-        newFileName = Date.now() + path.extname(file.originalname)
-        callback(null, newFileName)
-    })
-})
+//   Requerir configuración Multer
 
+const storage = require('../middlewares/multer')
 const upload = multer({storage})
 
-// Express validator
+// Requerir Express validator
 
-const { body } = require('express-validator')
+const validations = require('../middlewares/formValidation')
 
-let validations = [
-    body('nombre').notEmpty().withMessage('Por favor introduce un nombre'),
-    body('email').notEmpty().withMessage('Por favor introduce un email').bail()
-                 .isEmail().withMessage('Introduce un formato de correo válido'),
-    body('contrasena').notEmpty().withMessage('Por favor introduce una contraseña'),
-    body('imagenUsuario').custom((value, {req}) => {
-        let file = req.file
-        let acceptedExtensions = ['.jpg', '.png', '.gif']
+// Requerir guest middleware (redirección si se está logeado)
 
-        if (!file) {
-            throw new Error('Tienes que subir una imagen')
-        }
-        else{
-            let fileExtension = path.extname(file.originalname)
-            if (!acceptedExtensions.includes(fileExtension)) {
-                throw new Error('Las extensiones permitidas son .jpg .png .gif')
-            } 
+const guestMiddleware = require('../middlewares/guestMiddleware')
 
-        }
-        return true
-    })
-]
+// Requerir authMiddleware para redirigir a login si no se está logeado
 
+const authMiddleware = require('../middlewares/authMiddleware')
 
 // Rutas
 
@@ -58,10 +33,18 @@ router.get('/nosotros', main.mainNosotros)
 router.get('/contacto', main.mainContacto)
 
 // Registro
-router.get('/registro', main.mainRegistro)
+router.get('/registro', guestMiddleware, main.mainRegistro)
 router.post('/registro', upload.single('imagenUsuario'), validations, main.mainRegistroCreate)
 
 // Login
-router.get('/login', main.mainLogin)
+router.get('/login', guestMiddleware, main.mainLogin)
+router.post('/login', main.mainProcessLogin)
+
+// Logout
+
+router.get('/logout', main.mainLogout)
+
+// Usuario
+router.get('/usuario', authMiddleware, main.mainUsuarioVista)
 
 module.exports = router

@@ -2,6 +2,8 @@
 
 const express = require('express')
 const path = require('path')
+const session = require('express-session')
+const cookies = require('cookie-parser')
 
 // Definición app
 
@@ -25,6 +27,19 @@ app.use(express.json())
 // Hay que instalar method-override --> npm install method-override --save
 const methodOverride = require('method-override')
 app.use(methodOverride('_method'))
+
+// Session
+
+app.use(session ({secret: 'Secreto', resave: false, saveUninitialized: false}))
+
+// Cookies
+
+app.use(cookies())
+
+// Cookie middleware
+
+const loggedCookie = require('./middlewares/loggedCookie')
+app.use(loggedCookie)
 
 // Rutas
 
