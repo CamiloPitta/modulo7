@@ -7,14 +7,16 @@
     <title>Products</title>
 </head>
 <body>
-    <h1> Formulario creación de canciones </h1>
+    <h1> Formulario edición de canciones </h1>
 
-    <form action = 'create' method = 'POST'>
+    <h1> Editar <%= cancion.nombre%> </h1>
+
+    <form action = '<%= cancion.id%>' method = 'POST'>
         <label for = 'nombre'> Nombre</label>
-        <input type = 'text' name = 'nombre' placeholder= 'Nombre canción' >x
+        <input type = 'text' name = 'nombre' placeholder= 'Nombre canción' >
 
         <label for = 'compositor'>Compositor</label>
-        <input type = 'text' name = 'compositor' placeholder= 'COmpositor de la canción' >
+        <input type = 'text' name = 'compositor' placeholder= 'Compositor de la canción' >
 
         <label for = 'duracion'> Milisegundos</label>
         <input type = 'text' name = 'duracion' placeholder= 'Duración de la canción' >
@@ -22,6 +24,10 @@
 
         <input type = 'submit'>
 
+    </form>
+
+    <form action = '/canciones/borrar/<%= cancion.id%>' method = 'POST'>
+        <button type = 'submit'> Borrar </button>
     </form>
 
 </body>

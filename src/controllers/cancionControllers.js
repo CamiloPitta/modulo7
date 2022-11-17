@@ -42,6 +42,44 @@ const canciones = {
         })
         res.send('Recibido')
     },
+    cancionesLista: (req, res) => {
+        db.Cancion.findAll()
+            .then(function(canciones){
+                res.render('listarCancion.ejs', {canciones:canciones})
+            })
+        
+    },
+    cancionesEditForm: (req, res) => {
+        db.Cancion.findByPk(req.params.id)
+            .then(function(cancion){
+                res.render('editarCancion.ejs', {cancion:cancion})
+            })
+        
+    },
+    cancionesEdit: (req, res) => {
+ 
+        db.Cancion.update({
+            nombre: req.body.nombre,
+            compositor: req.body.compositor,
+            milisegundos: req.body.duracion
+        }, {
+            where: {
+                id: req.params.id
+            }
+        })
+        res.send('Actualizado')
+        
+    },
+    cancionesDelete: (req, res) => {
+ 
+        db.Cancion.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        res.send('Borrada')
+        
+    }
     // productsCreate: (req, res) => {
     //    if (req.file){
   
