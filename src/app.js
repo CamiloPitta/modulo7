@@ -46,7 +46,7 @@ app.use(loggedCookie)
 const productos = require('./routes/productsRoutes.js')
 const main = require('./routes/mainRoutes.js')
 const collections = require('./routes/collectionsRoutes.js')
-
+const canciones = require('./routes/cancionesRoutes.js')
 
 
 // Levantamiento del servidor
@@ -67,6 +67,5 @@ app.use('/', main)
 app.use('/collections', collections)
 
 
-
-
+app.use('/canciones', canciones)
 

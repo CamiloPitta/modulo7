@@ -1,4 +1,4 @@
-module.exports = function(sequeñize, dataTypes){
+module.exports = function(sequelize, dataTypes){
 
     let alias = 'Album'
     let cols = {
