@@ -2,10 +2,67 @@ const fs = require('fs')
 const path = require('path')
 const db = require('../../database/models')
 // const productos = JSON.parse(fs.readFileSync(path.join(__dirname, '../database/productos.json'))) 
-
+const Op = db.Sequelize.Op
 //
 
 const canciones = {
+    cancionesVisualizar: (req, res) => {
+        db.Cancion.findAll()
+        .then(function (respuesta){
+            res.status(200).json({
+                total: respuesta.length,
+                data: respuesta,
+                status: 200
+            })
+        })
+
+    },
+    cancionesIndividual: (req, res) => {
+        db.Cancion.findByPk(req.params.id)
+        .then(function(respuesta){
+            res.status(200).json({
+            data:respuesta,
+            status:200
+            })
+        })
+    },
+    cancionesCrearAPI: (req, res) => {
+        // res.json(req.body)
+     
+        db.Cancion.create(req.body)
+        .then(function(respuesta){
+            res.status(200).json({
+                data: respuesta,
+                status: 200,
+                created: 'Creado'
+            })
+
+        })
+    },
+    cancionesDeleteAPI: (req, res) => {
+        db.Cancion.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(function(respuesta){
+            res.json({
+                data: respuesta,
+                status: 200,
+                deleted: 'Borrado'
+            })
+        })
+    },
+    search: (req, res) => {
+        db.cancion.findAll({
+            where: {
+                nombre: {[Op.like]: '%' + req.query.keyword + '%'}
+            }
+        })
+        .then(function(respuesta){
+            res.status(200).json(respuesta)
+        })
+    },
     // productsLanding : (req, res) => {
     //     // res.send('productos por controller')
     //     res.render('products')
@@ -40,7 +97,7 @@ const canciones = {
             compositor: req.body.compositor,
             milisegundos: req.body.duracion
         })
-        res.send('Recibido')
+        // res.send('Recibido')
     },
     cancionesLista: (req, res) => {
         db.Cancion.findAll()

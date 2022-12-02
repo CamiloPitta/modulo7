@@ -42,6 +42,17 @@ const canciones = require('../controllers/cancionControllers')
 // router.get('/:id/:precio', products.productsPrecio)
 // router.get('/:id/:precio/resena?', products.productsResena)
 // router.get('/detalle', products.productsDetalle)
+
+// API
+
+router.get('/ver', canciones.cancionesVisualizar)
+router.get('/ver/:id', canciones.cancionesIndividual)
+router.post('/createAPI', canciones.cancionesCrearAPI)
+router.delete('/deleteAPI/:id', canciones.cancionesDeleteAPI)
+router.get('/search', canciones.search)
+
+// CRUD db
+
 router.get('/create', canciones.cancionesCreateForm)
 router.post('/create', canciones.cancionesCreate)
 router.get('/lista', canciones.cancionesLista)
