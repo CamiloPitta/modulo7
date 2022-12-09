@@ -54,7 +54,7 @@ const canciones = {
         })
     },
     search: (req, res) => {
-        db.cancion.findAll({
+        db.Cancion.findAll({
             where: {
                 nombre: {[Op.like]: '%' + req.query.keyword + '%'}
             }
