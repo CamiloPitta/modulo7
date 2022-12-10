@@ -22,9 +22,9 @@ const main = {
         // res.render('home')
         // res.cookie('testing', 'p', {maxAge: 1000*10})
         // console.log(req.cookies.testing)
-        // res.render('home')
+        res.render('home')
 
-        return res.json('Home API')
+        // return res.json('Home API')
     },
     mainNosotros: (req, res) => {
         res.send('nosotros por controllers')
